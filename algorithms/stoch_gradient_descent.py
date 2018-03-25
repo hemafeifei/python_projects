@@ -19,12 +19,12 @@ def next_batch(X, y, batchsize):
     # loop over our dataset 'X' in mini-batches of size
     for i in np.arange(0, X.shape[0], batchsize):
         # yield a tuple of the current batched data and labels
-        yield (X[i:i + batchsize], y[i: i + batchsize])
+        yield (X[i: i + batchsize], y[i: i + batchsize])
 
 
 # Construct the argument parse
 ap = argparse.ArgumentParser()
-ap.add_argument('-e', '--epochs', type=float, default=10,
+ap.add_argument('-e', '--epochs', type=float, default=100,
                 help='# of epochs')
 ap.add_argument('-a', '--alpha', type=float, default=0.01,
                 help='learning rate')
@@ -64,7 +64,7 @@ Y = (-W[0] - (W[1]*X)) / W[2]
 # Plot the orginial data along with our line of best fit
 plt.figure()
 plt.scatter(X[:, 1], X[:, 2], marker='o', c=y)
-plt.plot(X, Y , 'r--')
+plt.plot(X, Y, 'r--')
 
 # Plot the loss-training epochs curve
 fig = plt.figure()
@@ -73,4 +73,3 @@ fig.suptitle("Training Loss")
 plt.xlabel("Epoch of #")
 plt.ylabel("Loss")
 plt.show()
-
