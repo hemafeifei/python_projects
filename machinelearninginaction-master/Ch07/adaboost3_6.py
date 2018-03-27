@@ -32,7 +32,7 @@ def build_stump(data_arr, class_labels, D):
             for inequal in ['lt', 'gt']:
                 thresh_val = (range_min + float(j) * step_size)
                 predicted_vals = stump_classify(data_matrix, i, thresh_val, inequal)
-                err_arr = mat(ones(m,1))
+                err_arr = mat(ones((m,1)))
                 err_arr[predicted_vals==label_mat] = 0
                 weighted_error = D.T*err_arr
                 print("split: dim %d, thresh %.2f, thresh inequal: %s, the weighted error"
