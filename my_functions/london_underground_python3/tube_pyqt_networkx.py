@@ -9,7 +9,7 @@ from PyQt4.QtGui import *
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
 
-import tube
+from . import tube
 
 class TubeCanvas(FigureCanvas):
     def __init__(self):
